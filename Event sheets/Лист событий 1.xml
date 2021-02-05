@@ -1,0 +1,580 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Лист событий 1</name>
+    <events>
+        <variable constant="1" name="maxWarpEnergy" sid="272991112430322" static="0" type="number">100</variable>
+        <variable constant="0" name="BlastedAsteroids" sid="824013638052895" static="0" type="number">0</variable>
+        <variable constant="0" name="spawnedAsteroids" sid="616105111096679" static="0" type="number">0</variable>
+        <variable constant="0" name="numberOfAsteroids" sid="257818284742821" static="0" type="number">1</variable>
+        <variable constant="0" name="GameOver" sid="581398925628146" static="0" type="number">0</variable>
+        <event-block sid="107161751789233">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="806096056695672" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="864806118283544" type="Fire">
+                    <param id="0" name="Pin to">Custom</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="656010530305730" type="Lazer" />
+                <action id="-10" name="Set value" sid="631145988259625" type="Asteroid">
+                    <param id="0" name="Instance variable">rank</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="642742975580314" type="Asteroid" />
+                <action id="-9" name="Set value" sid="648354754537724" type="System">
+                    <param id="0" name="Variable">BlastedAsteroids</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="338055729399322" type="Explosion" />
+                <action id="-9" name="Destroy" sid="202599671959735" type="Wrap" />
+                <action id="-9" name="Destroy" sid="565713858298979" type="Shield" />
+                <action id="-9" name="Destroy" sid="905779604660963" type="ShieldBonus" />
+                <action id="33" name="Stop all" sid="148357719058248" type="Audio" />
+                <action id="0" name="Play" sid="690097288123543" type="Audio">
+                    <param id="0" name="Audio file">Main Theme</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-10</param>
+                    <param id="1" name="Tag (optional)">&quot;Main Theme&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="802687419233125">
+                    <conditions>
+                        <condition id="-10" name="For" sid="162983835005858" type="System">
+                            <param id="0" name="Name">&quot;&quot;</param>
+                            <param id="1" name="Start index">1</param>
+                            <param id="2" name="End index">numberOfAsteroids</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="418402092184363" type="System">
+                            <param id="0" name="Object to create">Asteroid</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">choose(1,2) = 1 ? random(-100, 855/2 - 150) : random(855/2 + 150, 2020) </param>
+                            <param id="3" name="Y">choose(1,2) = 1 ? random(-100, 480/2 - 150) : random(480/2 + 150, 1300 )</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="496960847628911" type="Asteroid">
+                            <param id="0" name="Angle">random(-180,180)</param>
+                        </action>
+                        <action behavior="Rotate" id="0" name="Set speed" sid="131351684427979" type="Asteroid">
+                            <param id="0" name="Speed">random(-180,180)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="636683767095042">
+            <conditions>
+                <condition id="2" name="Key is down" sid="775421942442003" type="Keyboard">
+                    <param id="0" name="Key">87</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="CustomMovement" id="4" name="Accelerate toward angle" sid="671183908647403" type="Custom">
+                    <param id="0" name="Acceleration">200</param>
+                    <param id="1" name="Angle">Custom.Angle</param>
+                </action>
+                <action id="-15" name="Set visible" sid="464049193414462" type="Fire">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="9" name="Set scale" sid="839961153299536" type="Fire">
+                    <param id="0" name="Scale">random(0.5,0.8)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="772813934494641">
+            <conditions>
+                <condition id="2" name="Key is down" sid="812809337698164" type="Keyboard">
+                    <param id="0" name="Key">65</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-19" name="Rotate counter-clockwise" sid="770670404770034" type="Custom">
+                    <param id="0" name="Degrees">2</param>
+                </action>
+                <action id="-9" name="Destroy" sid="735995067168136" type="Explosion" />
+            </actions>
+        </event-block>
+        <event-block sid="216178587394245">
+            <conditions>
+                <condition id="2" name="Key is down" sid="672661891443096" type="Keyboard">
+                    <param id="0" name="Key">68</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-18" name="Rotate clockwise" sid="893396936527730" type="Custom">
+                    <param id="0" name="Degrees">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="614171327875739">
+            <conditions>
+                <condition id="2" inverted="1" name="Key is down" sid="448640097685825" type="Keyboard">
+                    <param id="0" name="Key">87</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="548035331399801" type="Fire">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="806638775103017">
+            <conditions>
+                <condition behavior="CustomMovement" id="1" name="Compare speed" sid="222906623049908" type="Custom">
+                    <param id="0" name="Which">0</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Speed">2000</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="CustomMovement" id="2" name="Set speed" sid="395244980998175" type="Custom">
+                    <param id="0" name="Which">0</param>
+                    <param id="1" name="Speed">1500</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="161926198613498">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="291503619042916" type="Keyboard">
+                    <param id="0" name="Key">32</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="887971791616147" type="Custom">
+                    <param id="0" name="Object">Lazer</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="0" name="Play" sid="662644355501626" type="Audio">
+                    <param id="0" name="Audio file">Laser</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-10</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <event-block sid="883617830539236">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="533857756636384" type="Asteroid">
+                    <param id="0" name="Object">Asteroid</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Rotate" id="0" name="Set speed" sid="693431288376413" type="Asteroid">
+                    <param id="0" name="Speed">random(-180,180)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="978959422358800">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="829342572700219" type="Lazer">
+                    <param id="0" name="Object">Asteroid</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="280116567401491" type="System">
+                    <param id="0" name="Variable">GameOver</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="905822989598632" type="Asteroid" />
+                <action id="-9" name="Destroy" sid="337394820540092" type="Lazer" />
+                <action id="0" name="Spawn another object" sid="339214523909119" type="Asteroid">
+                    <param id="0" name="Object">Explosion</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="272736884960482">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="179682731430921" type="System">
+                            <param id="0" name="First value">random(1,100)</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">85</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="513954748776990" type="Asteroid">
+                            <param id="0" name="Object">ShieldBonus</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="387337783340281" type="Audio">
+                            <param id="0" name="Audio file">Shield Drop</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="750640610729246">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="382082562602474" type="Asteroid">
+                    <param id="0" name="Object">Custom</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="325871492415107" type="Custom" />
+                <action id="0" name="Spawn another object" sid="205411716483518" type="Asteroid">
+                    <param id="0" name="Object">Explosion</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="454009014650971" type="System">
+                    <param id="0" name="Variable">GameOver</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Play" sid="414543869150916" type="Audio">
+                    <param id="0" name="Audio file">Player explosion</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-9" name="Destroy" sid="834154654809160" type="Fire" />
+            </actions>
+        </event-block>
+        <comment>урок 3</comment>
+        <event-block sid="704510632607346">
+            <conditions>
+                <condition id="5" name="On any finished" sid="544847819263451" type="Explosion" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="529145732765210" type="Explosion" />
+            </actions>
+        </event-block>
+        <event-block sid="455568774512182">
+            <conditions>
+                <condition id="0" name="On click" sid="956533654184358" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="917349316264426" type="WarpEnergy">
+                    <param id="0" name="Instance variable">energyLevel</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="680220269525265" type="System">
+                    <param id="0" name="Variable">GameOver</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="105484366958686" type="Shield">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="178377749592845" type="Custom">
+                    <param id="0" name="Object">Wrap</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-3" name="Set position" sid="375964409908130" type="Custom">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="732196479077407" type="Custom">
+                    <param id="0" name="Object">Wrap</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="800537268686143" type="WarpEnergy">
+                    <param id="0" name="Instance variable">energyLevel</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="0" name="Play" sid="765212093553468" type="Audio">
+                    <param id="0" name="Audio file">Warp</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="378196073590825">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="557472045966211" type="System" />
+            </conditions>
+            <actions>
+                <action id="-5" name="Set width" sid="359421530636622" type="WarpEnergy">
+                    <param id="0" name="Width">WarpEnergy.energyLevel * 2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="232721482637953">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="134826890700675" type="System">
+                    <param id="0" name="Interval (seconds)">0.1</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="495131945914976" type="WarpEnergy">
+                    <param id="0" name="Instance variable">energyLevel</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="864436987333626" type="System">
+                    <param id="0" name="Variable">GameOver</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="309899159332404" type="WarpEnergy">
+                    <param id="0" name="Instance variable">energyLevel</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="450707690515045">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="607653196560656" type="Asteroid" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="831792039712948" type="System">
+                    <param id="0" name="Variable">BlastedAsteroids</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Play" sid="892109516666995" type="Audio">
+                    <param id="0" name="Audio file">Explosion</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-10</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="677634239813486">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="160276861374309" type="Asteroid">
+                            <param id="0" name="Instance variable">rank</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="584236216978604" type="System">
+                            <param id="0" name="Variable">spawnedAsteroids</param>
+                            <param id="1" name="Value">choose(2,3,4)</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="986198914184493" type="System">
+                            <param id="0" name="Variable">numberOfAsteroids</param>
+                            <param id="1" name="Value">spawnedAsteroids</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="663678037342963">
+                            <conditions>
+                                <condition id="-10" name="For" sid="409141234677767" type="System">
+                                    <param id="0" name="Name">&quot;&quot;</param>
+                                    <param id="1" name="Start index">1</param>
+                                    <param id="2" name="End index">spawnedAsteroids</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="732015460991064" type="System">
+                                    <param id="0" name="Object to create">Asteroid</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">Asteroid.X</param>
+                                    <param id="3" name="Y">Asteroid.Y</param>
+                                </action>
+                                <action behavior="Rotate" id="0" name="Set speed" sid="292742898111531" type="Asteroid">
+                                    <param id="0" name="Speed">random(-180,180)</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="626949990295856" type="Asteroid">
+                                    <param id="0" name="Angle">random(-180,180)</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="652204151362323" type="Asteroid">
+                                    <param id="0" name="Scale">0.5</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="276987247585668" type="Asteroid">
+                                    <param id="0" name="Instance variable">rank</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="293283024352438">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="897346573222268" type="Custom">
+                    <param id="0" name="Object">ShieldBonus</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="595928339658230" type="Shield" />
+                <action id="0" name="Spawn another object" sid="965162333492109" type="Custom">
+                    <param id="0" name="Object">Shield</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="516981106593596" type="Shield">
+                    <param id="0" name="Pin to">Custom</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" sid="701222218279830" type="ShieldBonus" />
+                <action id="0" name="Play" sid="722143928490403" type="Audio">
+                    <param id="0" name="Audio file">Shield Pickup</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="0" name="Play" sid="795561162279945" type="Audio">
+                    <param id="0" name="Audio file">Shield</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;Shield&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="859301576366216">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="461035413777489" type="System">
+                    <param id="0" name="Variable">GameOver</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="407210646204772" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="566606274611968" type="GameOver">
+                    <param id="0" name="X">855/2</param>
+                    <param id="1" name="Y"> 480/2</param>
+                </action>
+                <action id="0" name="Play" sid="409979492720029" type="Audio">
+                    <param id="0" name="Audio file">Game Over</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">20</param>
+                    <param id="1" name="Tag (optional)">&quot;Game Over&quot;</param>
+                </action>
+                <action id="22" name="Set paused" sid="578621374592699" type="Audio">
+                    <param id="0" name="Tag">&quot;Main Theme&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action id="6" name="Stop" sid="731897983788389" type="Audio">
+                    <param id="0" name="Tag">&quot;Engine&quot;</param>
+                </action>
+                <action id="6" name="Stop" sid="581160927673541" type="Audio">
+                    <param id="0" name="Tag">&quot;Shield&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="597426899207909">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="362644454362025" type="System">
+                    <param id="0" name="Variable">BlastedAsteroids</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">numberOfAsteroids</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="336149321126111" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="308769228474958" type="Congratulations">
+                    <param id="0" name="X">855/2</param>
+                    <param id="1" name="Y"> 480/2 </param>
+                </action>
+                <action id="0" name="Play" sid="279108116537580" type="Audio">
+                    <param id="0" name="Audio file">Victory</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;Victory&quot;</param>
+                </action>
+                <action id="22" name="Set paused" sid="294148856156420" type="Audio">
+                    <param id="0" name="Tag">&quot;Main Theme&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="563076982609697">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="121614994003378" type="Shield">
+                    <param id="0" name="Object">Asteroid</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="997851543412521" type="Asteroid" />
+                <action id="0" name="Spawn another object" sid="253351440723956" type="Asteroid">
+                    <param id="0" name="Object">Explosion</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>2041 music</comment>
+        <event-block sid="256833721299114">
+            <conditions>
+                <condition behavior="Fade" id="0" name="On fade-out finished" sid="463842931248194" type="Shield" />
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" sid="530297476244176" type="Audio">
+                    <param id="0" name="Tag">&quot;Shield&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="730127528600421">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="347162682958276" type="WarpEnergy">
+                    <param id="0" name="Instance variable">energyLevel</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="181590582529588" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="764621869187623" type="Audio">
+                    <param id="0" name="Audio file">Warp Recharge</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="973184411765287">
+            <conditions>
+                <condition id="-9" name="Is visible" sid="684339707419178" type="Fire" />
+                <condition id="5" inverted="1" name="Is tag playing" sid="338112084853131" type="Audio">
+                    <param id="0" name="Tag">&quot;Engine&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="716236398365255" type="Audio">
+                    <param id="0" name="Audio file">Engine</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">-10</param>
+                    <param id="1" name="Tag (optional)">&quot;Engine &quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="406492582906769">
+            <conditions>
+                <condition id="-9" inverted="1" name="Is visible" sid="889383419089943" type="Fire" />
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" sid="229321038834365" type="Audio">
+                    <param id="0" name="Tag">&quot;Engine &quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="894795282299563">
+            <conditions>
+                <condition id="0" name="On ended" sid="275258029283622" type="Audio">
+                    <param id="0" name="Tag">&quot;Game Over&quot;</param>
+                </condition>
+                <condition id="0" name="On ended" sid="679200193700050" type="Audio">
+                    <param id="0" name="Tag">&quot;Victory&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="22" name="Set paused" sid="193032096096669" type="Audio">
+                    <param id="0" name="Tag">&quot;Main Theme&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

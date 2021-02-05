@@ -1,0 +1,457 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>2041</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>hqpezlhflvfb</unique-id>
+    <saved-with-version>27700</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="Rotate" version="1">Rotate</behavior>
+        <behavior author="Scirra" id="custom" version="1">Custom Movement</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+        <behavior author="Scirra" id="wrap" version="1">Wrap</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>854</width>
+        <height>480</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="Background" sid="693983314369693">
+            <plugin id="TiledBg" />
+            <texture original-source="D:\Users\User\Desktop\1 Лига роботов\Cunstruct 2\2-м , 1-урок\спрайт\space.png" />
+        </object-type>
+        <object-type name="Custom" sid="901783981348119">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="CustomMovement" sid="352749011507969">
+                    <behavior id="custom" />
+                </behavior-type>
+                <behavior-type name="Wrap" sid="890061762633155">
+                    <behavior id="wrap" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Новая" pingpong="0" repeatcount="1" repeatto="0" sid="348605687457031" speed="5">
+                    <frame duration="1" hotspotX="0.506667" hotspotY="0.50505" original-source="D:\Users\User\Desktop\1 Лига роботов\Cunstruct 2\2-м , 1-урок\спрайт\spaceship.png">
+                        <image-point name="lazer" x="1.12" y="0.484848" />
+                        <collision-poly>
+                            <point x="0.186667" y="0.141414" />
+                            <point x="0.493333" y="0.010101" />
+                            <point x="0.6" y="0.30303" />
+                            <point x="1" y="0.494949" />
+                            <point x="0.6" y="0.69697" />
+                            <point x="0.493333" y="0.989899" />
+                            <point x="0.186667" y="0.858586" />
+                            <point x="0" y="0.494949" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Keyboard" sid="138932146488292">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Lazer" sid="173939482582854">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="242871490307056">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Wrap" sid="611108466204915">
+                    <behavior id="wrap" />
+                </behavior-type>
+                <behavior-type name="Fade" sid="967955474733677">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Новая" pingpong="0" repeatcount="1" repeatto="0" sid="456883272150326" speed="5">
+                    <frame duration="1" hotspotX="-0.0208333" hotspotY="0.5" original-source="D:\Users\User\Desktop\1 Лига роботов\Cunstruct 2\2-м , 1-урок\спрайт\laser.png">
+                        <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        <collision-poly>
+                            <point x="0.0208333" y="0.125" />
+                            <point x="0.5" y="0" />
+                            <point x="0.979167" y="0.125" />
+                            <point x="1" y="0.5" />
+                            <point x="0.979167" y="0.875" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0208333" y="0.875" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Fire" sid="476957621760127">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="342684219952670">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Новая" pingpong="0" repeatcount="1" repeatto="0" sid="654999853291834" speed="5">
+                    <frame duration="1" hotspotX="1" hotspotY="0.4375" original-source="D:\Users\User\Desktop\1 Лига роботов\Cunstruct 2\2-м , 1-урок\спрайт\fire.png">
+                        <collision-poly>
+                            <point x="0.9375" y="0.875" />
+                            <point x="0.5" y="0.8125" />
+                            <point x="0.15625" y="0.6875" />
+                            <point x="0" y="0.5" />
+                            <point x="0.125" y="0.25" />
+                            <point x="0.5" y="0.0625" />
+                            <point x="0.96875" y="0.0625" />
+                            <point x="0.96875" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="Array" sid="142164194609757">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="Asteroid" sid="196868657345634">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="rank" sid="378435615783043" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Bullet" sid="783919362104142">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Wrap" sid="375179524763982">
+                    <behavior id="wrap" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="516770998351271">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Rotate" sid="420864895584385">
+                    <behavior id="Rotate" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Новая" pingpong="0" repeatcount="1" repeatto="0" sid="521309766363495" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Users\User\Desktop\1 Лига роботов\Cunstruct 2\2-м , 1-урок\спрайт\rock.png">
+                        <collision-poly>
+                            <point x="0.142857" y="0.145833" />
+                            <point x="0.5" y="0.0520833" />
+                            <point x="0.826531" y="0.177083" />
+                            <point x="0.959184" y="0.5" />
+                            <point x="0.846939" y="0.84375" />
+                            <point x="0.5" y="0.979167" />
+                            <point x="0.163265" y="0.833333" />
+                            <point x="0.0306122" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Explosion" sid="875365129829528">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="36" loop="0" name="Новая" pingpong="0" repeatcount="1" repeatto="0" sid="856368739570837" speed="60">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Wrap" sid="908466570917965">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="593984732565039">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="32" loop="0" name="Новая" pingpong="0" repeatcount="1" repeatto="0" sid="112000037100613" speed="60">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mouse" sid="594591811960358">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="WarpEnergy" sid="951836659626257">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="energyLevel" sid="656733797746559" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="939618010277081" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="WarpBG" sid="257663540790996">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="287976172586045" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Text" sid="590883174144803">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="GameOver" sid="916761912791355">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="692855465230418" speed="5">
+                    <frame duration="1" hotspotX="0.501217" hotspotY="0.5" original-source="C:\Users\Andrew\Google Drive\Construct для партнера\Проекты игр\Space Rocks 2\message-lose.png">
+                        <collision-poly>
+                            <point x="0.0340633" y="0.170732" />
+                            <point x="0.498783" y="0.207317" />
+                            <point x="0.963504" y="0.182927" />
+                            <point x="0.92944" y="0.5" />
+                            <point x="0.924574" y="0.621951" />
+                            <point x="0.498783" y="0.597561" />
+                            <point x="0.0291971" y="0.853659" />
+                            <point x="0.0145985" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ShieldBonus" sid="823507066158684">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="603169923366935">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="593265189967619" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.503226" original-source="C:\Users\Andrew\Google Drive\Construct для партнера\Проекты игр\Space Rocks 2\shields.png">
+                        <collision-poly>
+                            <point x="0.175325" y="0.173633" />
+                            <point x="0.5" y="0.0289389" />
+                            <point x="0.834416" y="0.163987" />
+                            <point x="0.970779" y="0.498392" />
+                            <point x="0.834416" y="0.836013" />
+                            <point x="0.5" y="0.96463" />
+                            <point x="0.172078" y="0.829582" />
+                            <point x="0.0357143" y="0.498392" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Shield" sid="313745393535342">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="922595056604896">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Pin" sid="901182082606373">
+                    <behavior id="Pin" />
+                </behavior-type>
+                <behavior-type name="Fade" sid="498085070596176">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="Rotate" sid="640834408051367">
+                    <behavior id="Rotate" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="563661534763808" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.503226" original-source="C:\Users\Andrew\Google Drive\Construct для партнера\Проекты игр\Space Rocks 2\shields.png">
+                        <collision-poly>
+                            <point x="0.175325" y="0.173633" />
+                            <point x="0.5" y="0.0289389" />
+                            <point x="0.834416" y="0.163987" />
+                            <point x="0.970779" y="0.498392" />
+                            <point x="0.834416" y="0.836013" />
+                            <point x="0.5" y="0.96463" />
+                            <point x="0.172078" y="0.829582" />
+                            <point x="0.0357143" y="0.498392" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Congratulations" sid="962067546137904">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="870884282222082" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Andrew\Google Drive\Construct для партнера\Проекты игр\Space Rocks 2\message-win.png">
+                        <collision-poly>
+                            <point x="0.0232558" y="0.152174" />
+                            <point x="0.976744" y="0.152174" />
+                            <point x="0.961794" y="0.75" />
+                            <point x="0.0365449" y="0.76087" />
+                            <point x="0.00830565" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Audio" sid="532099925604030">
+            <plugin id="Audio" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Уровень 1.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Лист событий 1.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="2" />
+        <global-instance type="Mouse" uid="9" />
+        <global-instance type="Audio" uid="17">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+    </global-instances>
+    <sounds-folder>
+        <file name="Engine.m4a" />
+        <file name="Engine.ogg" />
+        <file name="Explosion.m4a" />
+        <file name="Explosion.ogg" />
+        <file name="Game Over.ogg" />
+        <file name="Laser 2.m4a" />
+        <file name="Laser 2.ogg" />
+        <file name="Laser.m4a" />
+        <file name="Laser.ogg" />
+        <file name="Main Theme.m4a" />
+        <file name="Main Theme.ogg" />
+        <file name="Player explosion.m4a" />
+        <file name="Player explosion.ogg" />
+        <file name="Shield Drop.m4a" />
+        <file name="Shield Drop.ogg" />
+        <file name="Shield Pickup.m4a" />
+        <file name="Shield Pickup.ogg" />
+        <file name="Shield.m4a" />
+        <file name="Shield.ogg" />
+        <file name="Victory.m4a" />
+        <file name="Victory.ogg" />
+        <file name="Warp Recharge.m4a" />
+        <file name="Warp Recharge.ogg" />
+        <file name="Warp.m4a" />
+        <file name="Warp.ogg" />
+    </sounds-folder>
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>
